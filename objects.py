@@ -8,6 +8,7 @@ class Tomas:
     
     def apagar(self):
         self.estado= "apagada"
+    
 
     def reportar(self):
         print(f"{self.nombre} esta {self.estado}")
@@ -29,6 +30,15 @@ torno2 = Hija("Torno CNC 2", 1200)
 torno2.reportar()
 torno2.enceder()   # ojo, heredado de Tomas, con esa ortografía
 torno2.reportar()
+
+
+class Fresadora(Tomas):
+    def __init__(self,nombre,velocidadfresa):
+        super().__init__(nombre,"apagada")
+        self.velocidadfresa= velocidadfresa
+    
+    def reportar(self):
+        print(f"{self.nombre} esta {self.estado} a {self.velocidadfresa}")
 
 try:
     valor= int(input("ingresa la velocidad en rpm"))
