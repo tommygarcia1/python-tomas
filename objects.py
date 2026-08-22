@@ -9,6 +9,9 @@ class Tomas:
     def apagar(self):
         self.estado= "apagada"
     
+    def enviar_a_mantenimiento(self):
+        self.estado= "en mantenimiento"
+    
 
     def reportar(self):
         print(f"{self.nombre} esta {self.estado}")
